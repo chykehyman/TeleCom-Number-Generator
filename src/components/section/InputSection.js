@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { Fragment } from "react";
+import styled from "styled-components";
+import { func, string } from "prop-types";
 
 const Input = styled.input`
   outline: none;
@@ -33,10 +34,17 @@ const Button = styled.button`
 `;
 
 const Select = styled.select`
- outline: none;
- height: 40px;
- margin-left: 10px;
- cursor: pointer;
+  outline: none;
+  height: 40px;
+  margin-left: 10px;
+  cursor: pointer;
+`;
+
+const ErrorDiv = styled.div`
+  color: red;
+  margin: 10px 0 0;
+  font-style: italic;
+  font-size: 13px;
 `;
 
 const Wrapper = styled.div`
@@ -45,13 +53,40 @@ const Wrapper = styled.div`
   margin-top: 30px;
 `;
 
-export default () => (
-  <Wrapper>
-    <Input type="number" placeholder="enter number here..." readonly/>
-    <Button>Generate</Button>
-    <Select>
-     <option value="asc">Ascending</option>
-     <option value="desc">Descending</option>
-    </Select>
-  </Wrapper>
-)
+const InputSection = ({
+  handleChange,
+  inputValue,
+  error,
+  generatePhoneNumbers,
+  handleSortChange
+}) => (
+  <Fragment>
+    <Wrapper>
+      <Input
+        type="number"
+        placeholder="enter number here..."
+        value={inputValue}
+        onChange={handleChange}
+      />
+      <Button onClick={generatePhoneNumbers}>Generate</Button>
+      <Select defaultValue="default" onChange={handleSortChange}>
+        <option value="default" disabled>
+          Sort By
+        </option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </Select>
+    </Wrapper>
+    {error && <ErrorDiv>{error}</ErrorDiv>}
+  </Fragment>
+);
+
+InputSection.propTypes = {
+  handleChange: func.isRequired,
+  inputValue: string.isRequired,
+  error: string.isRequired,
+  generatePhoneNumbers: func.isRequired,
+  handleSortChange: func.isRequired
+};
+
+export default InputSection;

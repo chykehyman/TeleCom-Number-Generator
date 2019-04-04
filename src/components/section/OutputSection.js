@@ -1,9 +1,12 @@
-import React, {Fragment} from 'react';
-import styled from 'styled-components';
+import React, { Fragment } from "react";
+import styled from "styled-components";
+import { array } from "prop-types";
 
-const TextArea = styled.textarea`
+const TextArea = styled.div`
   outline: none;
   margin-top: 20px;
+  padding: 10px 5px;
+  overflow: auto;
   width: 100%;
   height: 300px;
   background-color: white;
@@ -34,9 +37,33 @@ const Button = styled.button`
   outline: none;
 `;
 
-export default () => (
-  <Fragment>
-    <TextArea placeholder='Output is displayed here' readOnly></TextArea>
-    <Button>Export</Button>
-  </Fragment>
-)
+const displayNumbers = phoneNumbers => {
+  const amountGenerated = phoneNumbers.length;
+  if (amountGenerated === 0)
+    return (
+      <span style={{ fontSize: "20px" }}>
+        No numbers have been generated yet
+      </span>
+    );
+  return phoneNumbers.map((number, index) => (
+    <span key={index}>
+      {number}
+      {index < amountGenerated - 1 && ", "}
+    </span>
+  ));
+};
+
+const OutPutSection = ({ phoneNumbers }) => {
+  return (
+    <Fragment>
+      <TextArea readOnly>{displayNumbers(phoneNumbers)}</TextArea>
+      <Button>Export</Button>
+    </Fragment>
+  );
+};
+
+OutPutSection.propTypes = {
+  phoneNumbers: array.isRequired
+};
+
+export default OutPutSection;
