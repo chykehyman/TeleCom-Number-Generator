@@ -14,7 +14,7 @@ export default class TeleApp extends Component {
     inputValue: "",
     phoneNumbers: [],
     error: "",
-    sortValue: "asc"
+    sortValue: "asc"   
   };
 
   handleOnChange = event => {
@@ -24,7 +24,6 @@ export default class TeleApp extends Component {
     });
   };
   validateInput = () => {
-    console.log("$%^", this.state.inputValue);
     const { inputValue } = this.state;
     let errorMessage = "";
     if (inputValue <= 0 || inputValue >= 10000) {
@@ -34,7 +33,6 @@ export default class TeleApp extends Component {
   };
   handleGeneratePhoneNumbers = event => {
     const error = this.validateInput();
-    console.log(this.state);
 
     event.preventDefault();
     if (!error) {
