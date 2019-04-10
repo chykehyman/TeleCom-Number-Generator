@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test case for <InputSection /> component should render the InputSection component 1`] = `
+<Fragment>
+  <styled.div>
+    <styled.input
+      onChange={[MockFunction]}
+      placeholder="enter number here..."
+      type="number"
+      value=""
+    />
+    <styled.button
+      onClick={[MockFunction]}
+    >
+      Generate
+    </styled.button>
+    <styled.select
+      defaultValue="default"
+      onChange={[MockFunction]}
+    >
+      <option
+        disabled={true}
+        value="default"
+      >
+        Sort By
+      </option>
+      <option
+        value="asc"
+      >
+        Ascending
+      </option>
+      <option
+        value="desc"
+      >
+        Descending
+      </option>
+    </styled.select>
+  </styled.div>
+</Fragment>
+`;

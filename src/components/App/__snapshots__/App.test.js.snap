@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test case for <App /> component should render the App component 1`] = `
+<styled.div>
+  <_default />
+  <Section
+    error=""
+    generatePhoneNumbers={[Function]}
+    handleChange={[Function]}
+    handleSortChange={[Function]}
+    inputValue=""
+    phoneNumbers={Array []}
+    sortValue="asc"
+  />
+</styled.div>
+`;

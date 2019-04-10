@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test case for <OutputSection /> component should display generated numbers 1`] = `
+<Fragment>
+  <styled.div
+    readOnly={true}
+  >
+    <span
+      key="0"
+    >
+      0876865756
+      , 
+    </span>
+    <span
+      key="1"
+    >
+      0876564365
+    </span>
+  </styled.div>
+  <styled.button
+    className="yea"
+    onClick={[Function]}
+  >
+    Export
+  </styled.button>
+  <styled.div>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Min Number
+          </th>
+          <th>
+            Max Number
+          </th>
+          <th>
+            Total Number
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            0
+            876564365
+          </td>
+          <td>
+            0
+            876865756
+          </td>
+          <td>
+            2
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </styled.div>
+</Fragment>
+`;
+
+exports[`Test case for <OutputSection /> component should render the OutputSection component 1`] = `
+<Fragment>
+  <styled.div
+    readOnly={true}
+  >
+    <span
+      key="0"
+    >
+      0876865756
+      , 
+    </span>
+    <span
+      key="1"
+    >
+      0876564365
+    </span>
+  </styled.div>
+  <styled.button
+    className="yea"
+    onClick={[Function]}
+  >
+    Export
+  </styled.button>
+  <styled.div>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Min Number
+          </th>
+          <th>
+            Max Number
+          </th>
+          <th>
+            Total Number
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            0
+            876564365
+          </td>
+          <td>
+            0
+            876865756
+          </td>
+          <td>
+            2
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </styled.div>
+</Fragment>
+`;
