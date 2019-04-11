@@ -104,9 +104,8 @@ const displayTable = phoneNumbers => {
   );
 };
 
-const savePhoneNumbers = () => {
-  const numbers = document.getElementById("numbers").innerText;
-  const file = new File([numbers], {
+const savePhoneNumbers = (phoneNumbers) => {
+  const file = new File([phoneNumbers], {
     type: "text/plain;charset=utf-8"
   });
   saveAs(file, "phone-numbers.txt");
@@ -115,10 +114,10 @@ const savePhoneNumbers = () => {
 const OutPutSection = ({ phoneNumbers }) => {
   return (
     <Fragment>
-      <TextArea readOnly id="numbers">{displayNumbers(phoneNumbers)}</TextArea>
+      <TextArea readOnly>{displayNumbers(phoneNumbers)}</TextArea>
       {phoneNumbers.length > 0 && (
         <Fragment>
-          <Button onClick={() => savePhoneNumbers(phoneNumbers)}>Export</Button>
+          <Button className="yea" onClick={() => savePhoneNumbers(phoneNumbers)}>Export</Button>
           <TableArea>{displayTable(phoneNumbers)}</TableArea>
         </Fragment>
       )}
